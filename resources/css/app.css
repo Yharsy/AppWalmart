@@ -1,0 +1,192 @@
+:root{
+  --brand:#0071ce;         /* azul principal */
+  --brand-2:#005a9e;       /* hover */
+  --bg:#f2f2f2;
+  --card:#ffffff;
+  --ink:#0f172a;
+  --muted:#64748b;
+  --radius:14px;
+  --shadow:0 10px 25px rgba(2,8,23,.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial; color:var(--ink); background:var(--bg)}
+
+/* NAVBAR */
+.navbar{background:var(--brand); color:#fff; position:sticky; top:0; z-index:50; box-shadow:0 2px 0 rgba(0,0,0,.04)}
+.nav-wrap{max-width:1200px; margin:0 auto; padding:16px 20px; display:flex; align-items:center; justify-content:space-between}
+.brand{display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px}
+.brand img{height:26px; width:auto}
+.brand span{font-size:1.1rem}
+.nav-links{display:flex; gap:22px; flex-wrap:wrap}
+.nav-links a{color:#e6f1fb; text-decoration:none; font-weight:600; padding:6px 8px; border-radius:8px; transition:.2s ease}
+.nav-links a:hover{background:var(--brand-2); color:#fff}
+
+/* HERO */
+.hero{max-width:1200px; margin:26px auto 0; padding:0 20px}
+.hero h1{font-size:1rem; letter-spacing:.8px; color:#0b2b4a; text-transform:uppercase}
+
+/* CONTENT / PANEL */
+.content{max-width:1200px; margin:14px auto 60px; padding:0 20px}
+.panel{background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden}
+.panel-header{display:flex; align-items:center; justify-content:space-between; padding:18px 20px; border-bottom:1px solid #e5e7eb}
+.panel-header h2{margin:0; font-size:1.1rem}
+.panel-actions{display:flex; gap:10px}
+.btn{appearance:none; border:0; background:var(--brand); color:#fff; padding:10px 14px; border-radius:10px; font-weight:600; cursor:pointer}
+.btn:hover{background:var(--brand-2)}
+.btn.secondary{background:#eef6ff; color:#0b2b4a}
+.btn.secondary:hover{background:#dcebff}
+.panel-body{padding:20px}
+.placeholder{height:440px; border:2px dashed #d1e4ff; border-radius:12px; display:grid; place-items:center; color:#4776a9}
+.ph-title{margin:0; text-align:center; font-weight:600}
+.ph-sub{display:block; text-align:center; color:var(--muted)}
+
+/* FOOTER */
+.footer{background:var(--brand); color:#fff}
+.footer-wrap{max-width:1200px; margin:0 auto; padding:24px 20px; display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.footer h3{margin:0 0 8px; font-size:1.1rem}
+.footer p{margin:0; color:#e6f1fb}
+
+/* Responsive */
+@media (max-width:760px){
+  .nav-wrap{flex-direction:column; gap:12px; align-items:flex-start}
+  .footer-wrap{grid-template-columns:1fr}
+}
+
+/* --- Sticky footer layout --- */
+html, body { height: 100%; }
+body.page{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Que el contenido empuje al footer hacia abajo */
+.content{
+  flex: 1 0 auto;   /* ocupa el alto disponible */
+}
+
+/* El footer se queda al final sin position fixed */
+.footer{
+  margin-top: auto; /* empujado por el main */
+  /* resto de tus estilos existentes:
+     background: var(--brand); color: #fff;
+     (ya lo tienes)
+  */
+}
+
+/* Opcional: sutil borde/ sombra superior para separarlo del contenido */
+/*footer { box-shadow: 0 -1px 0 rgba(0,0,0,.06); }*/
+
+.footer{
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  width: 100%;
+  z-index: 40;
+}
+.content { padding-bottom: 96px; } /* deja espacio para que no tape contenido */
+
+
+.input{padding:10px;border:1px solid #e5e7eb;border-radius:10px;width:100%}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:10px;border-bottom:1px solid #eef2f7;text-align:left}
+.table thead th{background:#f8fafc;border-bottom:1px solid #e5e7eb}
+.err{color:#b91c1c;background:#fee2e2;border:1px solid #fecaca;padding:8px 10px;border-radius:10px}
+
+.nav-links a.active {
+  background: var(--brand-2);
+  color: #fff;
+}
+
+.btn-nav {
+  background: transparent;       
+  color: #ffffff;
+  padding: 6px 12px;
+  margin-left: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.btn-nav:hover {
+  background: rgba(255, 255, 255, 0.2); /* efecto hover */
+  color: #ffffff;
+}
+
+.btn-nav .icon {
+  font-size: 1rem;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #f5f7fb;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+.carousel-track {
+  display: flex;
+  transition: transform .5s ease;
+}
+.carousel-slide {
+  min-width:100%;
+  position:relative;
+  height: clamp(220px, 35vw, 440px); /* adapta a pantalla */               /* ajusta alto */
+}
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.carousel-caption {
+  position: absolute;
+  left: 24px;
+  bottom: 20px;
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(255,255,255,.85);
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .2s ease, transform .1s ease;
+  user-select: none;
+}
+.carousel-btn:hover { background: #fff; }
+.carousel-btn:active { transform: translateY(-50%) scale(.98); }
+.carousel-btn.prev { left: 12px; }
+.carousel-btn.next { right: 12px; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+.carousel-dots button {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255,255,255,.6);
+  cursor: pointer;
+}
+.carousel-dots button.is-active { background: #ffffff; }
