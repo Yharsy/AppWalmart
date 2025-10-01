@@ -39,12 +39,7 @@
         <a href="#">Stock</a>
 
         <!--  Botones nuevos -->
-        <a href="" class="btn-nav">
-          🛒 Carrito
-        </a>
-        <a href="" class="btn-nav">
-          🔑 Iniciar sesión
-        </a>
+        
        
       </nav>
     </div>
